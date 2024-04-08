@@ -1,0 +1,226 @@
+﻿@model DatabaseFirstApproach.Models.RegisterModel
+
+@{
+    ViewBag.Title = "AdminLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 id="title">@ViewBag.Title.</h2>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+
+    @*************************** CSS *******************@
+
+    <style type="text/css">
+
+        * {
+            box-sizing: border-box;
+            font-family: "Merriweather Sans", sans-serif;
+        }
+
+        body {
+            background-color: #B0DBEE;
+            .form
+
+        {
+            color: white;
+            background-color: #009EDF;
+            border-radius: 5px;
+            width: 400px;
+            padding: 40px;
+            margin: 150px auto;
+            -webkit-box-shadow: -1px 3px 18px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: -1px 3px 18px 0px rgba(0,0,0,0.75);
+            box-shadow: -1px 3px 18px 0px rgba(0,0,0,0.75);
+            p
+
+        {
+            font-size: 2em;
+        }
+
+        button {
+            width: 100%;
+            text-align: center;
+            color: grey;
+            margin-top: 20px;
+            border: 1px solid rgba(0,0,0,0.4);
+        }
+
+        .form-group {
+            margin: 15px auto;
+            label
+
+        {
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .input-group {
+            border-radius: 5px;
+            -webkit-box-shadow: -1px 3px 18px 0px rgba(0,0,0,0.35);
+            -moz-box-shadow: -1px 3px 18px 0px rgba(0,0,0,0.35);
+            box-shadow: -1px 3px 18px 0px rgba(0,0,0,0.35);
+            .input-group-addon
+
+        {
+            border: none;
+            border-right: 1px solid rgba(0,0,0,0.2);
+        }
+
+        input {
+            padding-left: 10px;
+        }
+
+        i {
+            color: #009EDF;
+        }
+
+
+        input {
+            padding: 3px;
+            width: 100%;
+            border: none;
+            border-radius: 0 5px 5px 0;
+        }
+
+        }
+        }
+        }
+    </style>
+
+
+</head>
+<body>
+
+    @using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <label>First Name</label>
+                @Html.TextBoxFor(model => model.FirstName, new { @class = "input-group" })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col">
+                <lable>Middle Name</lable>
+                @Html.TextBoxFor(model => model.MiddleName, new { @class = "input-group" })
+                @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col">
+                <label>Last Name</label>
+                @Html.TextBoxFor(model => model.LastName, new { @class = "input-group" })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <br />
+        <div class="row">
+            <div class="col">
+                <label>Address</label>
+                @Html.TextBoxFor(model => model.Address, new { @class = "input-group" })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col">
+                <label>Contact Number</label><br />
+                @Html.EditorFor(model => model.Mobile, new { @class = "input-group" })
+                @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col">
+                <label>Gender</label><br />
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                </div>
+
+
+               @* @Html.EditorFor(model => model.Gender, new { @class = "input-group" })*@
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <br />
+        <div class="row">
+            <div class="col">
+                <label>Age</label><br />
+                @Html.EditorFor(model => model.Age, new { @class = "input-group" })
+                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="col">
+                <label for="validationTooltip05">Joining Date</label><br />
+                @Html.EditorFor(model => model.JoiningDate, new { @class = "input-group" })
+                @Html.ValidationMessageFor(model => model.JoiningDate, "", new { @class = "text-danger" })
+            </div>
+            <div class="col">
+                <label for="validationTooltip05">Qualification</label><br />
+                @Html.EditorFor(model => model.Qualification, new { @class = "input-group" })
+                @Html.ValidationMessageFor(model => model.Qualification, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <br />
+        <div class="row">
+            <div class="col">
+                <label>Username</label><br />
+                @Html.EditorFor(model => model.UserName, new { @class = "input-group" })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col">
+                <label>Password</label><br />
+                @Html.EditorFor(model => model.PassWord, new { @class = "input-group" })
+                @Html.ValidationMessageFor(model => model.PassWord, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <div class="custom-file">
+                        <label>Photo</label>
+                        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                        <label class="custom-file-label" for="validatedCustomFile">Insert imgae in .jpg</label>
+                        <div class="invalid-feedback">Example invalid custom file feedback</div>
+                    </div> @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+        </div>
+
+
+        <br />
+        <div>
+            <input type="submit" name="RegistrationPage" value="Register here">
+
+        </div>
+
+
+        <br /><br />
+        <h2>Already Registered ? @Html.ActionLink("Login", "AdminLogin", "Home")</h2>
+</div>
+    }
+   
+
+</body>
+
+</html>
+
