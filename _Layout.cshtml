@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <img src="https://www.navodaya.gov.in/nvs/export/sites/nvs/nvs-school/RAIPUR/images/School-name-Board.JPG_1000482813.jpg" height="300" width="1600">
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-success text-bg-success">
+        <div class="container">
+            <div class="row">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" @Html.ActionLink("About us", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" @Html.ActionLink("Home", "Events", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" @Html.ActionLink("Staff", "Staff", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" @Html.ActionLink("Gallary", "Gallary", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" @Html.ActionLink("Events", "Contact", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" @Html.ActionLink("Contact us ", "Feedback", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                </ul>
+            </div>
+
+            @*  <div class="row-cols-md-3" style="text-align:center">
+                    <p> "A Good education can change anyone.A good teacher can change everything" - Unknowm</p>
+                    <p> TO the world you may be just a teacher but to your studenta you are hero. - XYZ</p>
+                </div>*@
+
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @*<div class=" container body-content">*@
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
